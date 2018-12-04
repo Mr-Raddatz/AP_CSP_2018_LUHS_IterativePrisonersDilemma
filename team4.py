@@ -6,11 +6,11 @@
 #     move: A function that returns 'c' or 'b'
 ####
 import random
-team_name = 'Jigsaw' # Only 10 chars displayed.
-strategy_name = 'Chaos'
-strategy_description = 'Random selection'
+team_name = 'Computer Science Girls' # Only 10 chars displayed.
+strategy_name = 'Tit For Tat'
+strategy_description = 'returns c or b'
 options = ('b', 'c')    
-def move(my_history, their_history, my_score, their_score):
+def strategy(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -32,7 +32,7 @@ def move(my_history, their_history, my_score, their_score):
 def test_move(my_history, their_history, my_score, their_score, result):
     ''''''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
-    Returns True or False, dpending on whether result was as expected.
+    Returns True or False, depending on whether result was as expected.
     ''''''
     real_result = move(my_history, their_history, my_score, their_score)
     if real_result == result:
@@ -75,3 +75,15 @@ if __name__ == '__main__':
               result='b'):
          print 'Test passed'
 '''          
+
+def strategy(self, opponent):
+    '''begins by playing 'c': this is affected by the history of the opponent: the strategy simply repeats the last action of the opponent'''
+    if their_history==0:
+        return 'c'
+    else:
+        return their_history[-1]
+
+def _repr_(self):
+    "The string method for the strategy."
+    return "Tit For Tat"
+    
