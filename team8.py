@@ -5,7 +5,7 @@ import random
 #     strategy_name: a string
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
-####
+#### LOLA was a show girl
 
 team_name = 'Josh R' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
