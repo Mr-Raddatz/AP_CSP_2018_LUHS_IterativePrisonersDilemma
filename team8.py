@@ -5,11 +5,11 @@ import random
 #     strategy_name: a string
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
-#### LOLA was a show girl
+####
 
 team_name = 'Josh R' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Tit for Tat with a random betrayal chance'
+strategy_description = 'It will start by colluding, and then will imitate the last played move of the opponent. It also has a random chance to betray'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -25,13 +25,17 @@ def move(my_history, their_history, my_score, their_score):
     # The most recent round is my_history[-1] and their_history[-1].
     
     # Analyze my_history and their_history and/or my_score and their_score.
-    # Decide whether to return 'c' or 'b'.
-    
-    x=random.randint(1,4)
-    if x==1:
-        return 'c'
-    else:
+     
+    x=random.randint(1,10)
+    if x==1:# Decide whether to return 'c' or 'b'.
+   
         return 'b'
+    else:
+        y=len(their_history)-1
+        if their_history[y:]=='':
+            return 'c'
+        else:
+            return their_history[y:]
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
