@@ -8,8 +8,8 @@ import random
 ####
 
 team_name = 'Josh R' # Only 10 chars displayed.
-strategy_name = 'Tit for Tat with a random betrayal chance'
-strategy_description = 'It will start by colluding, and then will imitate the last played move of the opponent. It also has a random chance to betray'
+strategy_name = 'Collude unless betrayed'
+strategy_description = 'Will always collude until betrayed. Will then betray'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -26,16 +26,17 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
      
-    x=random.randint(1,10)
-    if x==1:# Decide whether to return 'c' or 'b'.
-   
-        return 'b'
+    if len(their_history)==0:
+        return 'c'
     else:
         y=len(their_history)-1
-        if their_history[y:]=='':
-            return 'c'
+        if 'b' in my_history:
+            return 'b'
+        elif their_history[y:]=='b':
+            return 'b'
         else:
-            return their_history[y:]
+            return 'c'
+        
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
