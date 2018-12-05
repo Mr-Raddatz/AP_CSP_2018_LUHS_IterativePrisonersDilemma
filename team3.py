@@ -1,35 +1,34 @@
-####
-# Each team's file must define four tokens:
-#     team_name: a string
-#     strategy_name: a string
-#     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-#    asdugfas bblacjbacssdaf
-#### asdfguibasdnfbeuo
+import random
 
-team_name = 'IEMTALWIAA' # Only 10 chars displayed.
-strategy_name = 'Winning Stradegy'
-strategy_description = 'It analyzes the other team'
+team_name = 'Ur m0m g4y'
+strategy_name = 'Betray, then Collude until Betrayed, Unless they start colluding again, then collude until betrayed'
+strategy_description = 'Your Mom = "G" + "A" + "Y"'
     
 def move(my_history, their_history, my_score, their_score):
-    ''' Arguments accepted: my_history, their_history are strings.
-    my_score, their_score are ints.
+    # tit for tat, until betrayed twice in a row, then always betray
+    #collude twice, then spiteful
+    # winner12: c, c then pavlov, then if betrayed twice, betray
+    #pavlov: c on the first move, then betrays only if the players did not agree
+    # gradual: c on first move, betray n times after nth bertayal, after two colludes, start colluding again
+   
+    betrayed = False
     
-    Make my move.
-    Returns 'c' or 'b'. 
-    '''
+    if 'b' in their_history:
+        betrayed = True
+    else:
+        betrayed = False
+        
+    if len(their_history) > 2:
+        if their_history[-2:-1]+their_history[-1] == 'cc':
+            betrayed = False
 
-    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
-    # their_history: a string of the same length as history, possibly empty. 
-    # The first round between these two players is my_history[0] and their_history[0].
-    # The most recent round is my_history[-1] and their_history[-1].
     
-    # Analyze my_history and their_history and/or my_score and their_score.
-    # Decide whether to return 'c' or 'b'.
-    if b in their_history[-1:]: #if they betrayed mast round I betray them.
-        return b
-    elif c in their_history[-1:]: #if the colluded last round I collude them.
-        return c
-    
-
+    if len(my_history) == 0:
+        return 'b'
+    elif not betrayed:
+        return 'c'
+    elif betrayed:
+        return 'b'
+    else:
+        return random.choice('b', 'c')
     
