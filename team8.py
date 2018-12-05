@@ -26,16 +26,17 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
      
-    if len(their_history)==0:
+    if len(their_history)==0: #Collude for the first round
         return 'c'
     else:
-        y=len(their_history)-1
-        if 'b' in my_history:
+        y=len(their_history)-1 #Makes a variable one less than the number of characters in their_history, just to make a line of code more succint
+        if 'b' in my_history: #If I have betrayed before, continue to betray
             return 'b'
-        elif their_history[y:]=='b':
+        elif their_history[y:]=='b': #If the last character in the string of their_history is 'b', then betray
             return 'b'
         else:
-            return 'c'
+            return 'c' #If I haven't betrayed yet, and they didn't just betray, then collude
+    #Not sure if it's necessary to define collude the first round, but it's included to be sure.    
         
 
     
