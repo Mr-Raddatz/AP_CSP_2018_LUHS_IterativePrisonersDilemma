@@ -12,5 +12,3 @@ def also():
                 print('betray')
                 print('betray')
                 print('betray')
-                print('betray')
-                print('betray')
