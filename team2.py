@@ -6,13 +6,14 @@
 #     move: A function that returns 'c' or 'b'
 ####
 import random
+###oli;jhoijhjlkjh
 
 team_name = 'ur m0m g4y'
 strategy_name = 'spiteful_cc'
 strategy_description = 'Its really hard to explain'
 
 def countB(history):
-    sum = 0
+    sum = 0 
     for element in history:
         if element == 'b':
             sum += 1
