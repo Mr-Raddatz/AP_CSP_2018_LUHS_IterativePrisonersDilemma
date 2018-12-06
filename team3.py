@@ -8,7 +8,7 @@
 import random
 
 team_name = 'ur m0m g4y'
-strategy_name = 'spiteful_cc'
+strategy_name = 'tft_spiteful'
 strategy_description = 'Its really hard to explain'
 
 def countB(history):
@@ -84,6 +84,10 @@ def move(my_history, their_history, my_score, their_score):
             return 'b'
         else:
             return 'c'
+    
+
+    
+
     
 
     
