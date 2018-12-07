@@ -10,7 +10,12 @@ team_name = 'Computer Science Girls' # Only 10 chars displayed.
 strategy_name = 'Tit For Tat'
 strategy_description = 'returns c or b'
 options = ('b', 'c')    
-def strategy(my_history, their_history, my_score, their_score):
+def move(my_history, their_history, my_score, their_score):
+        '''begins by playing 'c': this is affected by the history of the opponent: the strategy simply repeats the last action of the opponent'''
+    if their_history==0:
+        return 'c'
+    else:
+        return their_history[-1]
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -26,7 +31,6 @@ def strategy(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return random.choice(options)
 
 '''    
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -76,12 +80,7 @@ if __name__ == '__main__':
          print 'Test passed'
 '''          
 
-def strategy(self, opponent):
-    '''begins by playing 'c': this is affected by the history of the opponent: the strategy simply repeats the last action of the opponent'''
-    if their_history==0:
-        return 'c'
-    else:
-        return their_history[-1]
+
 
 def _repr_(self):
     "The string method for the strategy."
