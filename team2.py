@@ -1,14 +1,16 @@
 import random
-def also():
+def move(my_history, their_history, my_score, their_score):
     
     while 1 == 1:
-        n = random.randint(1, 20)
-        if 1 <= n < 9:
-                print('collude')
-        elif 11 <= n < 20:
-                print('betray')
-        elif n == 10:
-                print('betray')
-                print('betray')
-                print('betray')
-                print('betray')
+       n = random.randint(0, 9)
+       if 'cc' in their_history:
+           return 'b'
+       elif 0 <= n <= 4:
+             return 'b'
+       elif 5 <= n <= 9:
+             return 'c'
+       elif 'bbb' in their_history:
+           return 'c'
+       elif 'ccc' in my_history:
+           return 'b'
+               
