@@ -1,3 +1,7 @@
+team_name = 'Smooth Criminals'
+strategy_name = 'Shart'
+strategy_description = 'pretty self explanatory'
+
 import random
 def move(my_history, their_history, my_score, their_score):
     
