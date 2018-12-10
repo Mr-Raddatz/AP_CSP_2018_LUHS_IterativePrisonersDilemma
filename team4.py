@@ -11,7 +11,6 @@ strategy_name = 'Tit For Tat'
 strategy_description = 'returns c or b'
 options = ('b', 'c')    
 def move(my_history, their_history, my_score, their_score):
-        '''begins by playing 'c': this is affected by the history of the opponent: the strategy simply repeats the last action of the opponent'''
     if their_history==0:
         return 'c'
     else:
