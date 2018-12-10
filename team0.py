@@ -11,8 +11,9 @@ strategy_description = 'Random^2'
     
 import random
 
-a = random.randint(0,1)
-def move(my_history, thei_history, my_score, their_score):
+
+def move(my_history, their_history, my_score, their_score):
+    a = random.randint(0,1)
     if a == 0:
        return 'b'
     if a == 1:
