@@ -11,10 +11,11 @@ strategy_name = 'Tit For Tat'
 strategy_description = 'returns c or b'
 options = ('b', 'c')    
 def move(my_history, their_history, my_score, their_score):
+    x=len(their_history)-1
     if their_history==0:
         return 'c'
     else:
-        return their_history[-1]
+        return their_history[x:]
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -85,3 +86,4 @@ def _repr_(self):
     "The string method for the strategy."
     return "Tit For Tat"
     
+
