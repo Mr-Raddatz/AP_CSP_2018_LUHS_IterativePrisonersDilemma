@@ -11,17 +11,17 @@ strategy_name = 'alternate'
 strategy_description = 'Collude, then alternate'
     
 
-    def move(my_history, their_history, my_score, their_score):
+def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
     Make my move.
     Returns 'c' or 'b'. 
     '''
-        if len(my_history)%2 == 0:
+    if len(my_history)%2 == 0:
             return 'c'
-        else:
-            return 'b
+    else:
+            return 'b'
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].
