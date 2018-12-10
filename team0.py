@@ -13,7 +13,7 @@ import random
 
 a = random.randint(0,1)
 def move(my_history, thei_history, my_score, their_score):
-if a == 0:
-    return 'b'
-if a == 1:
-    return 'c'
+    if a == 0:
+       return 'b'
+    if a == 1:
+       return 'c'
